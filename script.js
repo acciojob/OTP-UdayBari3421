@@ -1,16 +1,17 @@
 function focusNext(currentInput) {
     const maxLength = parseInt(currentInput.getAttribute('maxlength'));
-    const nextInputId = parseInt(currentInput.id.substring(5)) + 1;
+    const nextInputId = parseInt(currentInput.id.split('-')[1]) + 1;
 
     if (currentInput.value.length === maxLength && nextInputId <= 6) {
-        document.getElementById('digit' + nextInputId).focus();
+        document.getElementById('code-' + nextInputId).focus();
     }
 }
 
 function focusPrev(currentInput) {
-    const prevInputId = parseInt(currentInput.id.substring(5)) - 1;
+    const prevInputId = parseInt(currentInput.id.split('-')[1]) - 1;
 
     if (event.key === 'Backspace' && prevInputId >= 1) {
-        document.getElementById('digit' + prevInputId).focus();
+        currentInput.value = ''; // Clear the current input
+        document.getElementById('code-' + prevInputId).focus();
     }
 }
