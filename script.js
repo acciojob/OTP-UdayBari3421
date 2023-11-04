@@ -11,7 +11,7 @@ function focusPrev(currentInput) {
     const prevInputId = parseInt(currentInput.id.split('-')[1]) - 1;
 
     if (event.key === 'Backspace' && prevInputId >= 1) {
-        currentInput.value = ''; // Clear the current input
+        currentInput.value = '';
         document.getElementById('code-' + prevInputId).focus();
     }
 }
