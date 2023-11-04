@@ -7,32 +7,22 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
 	<h2 id="verification_heading">Verify Your Account</h2>
-    <p id="verification_subtext">We have emailed you the six digit code to acciojob@email.com Enter the code below to confirm your email address</p>
-     <div class="code-container">
-        <div>
-            <input placeholder="0" type="number" id="1" class="code" maxlength="1" onkeyup="clickEvent(this,'2')" >
-        </div>
-        <div>
-            <input placeholder="0" type="number" id="2" class="code" maxlength="1" onkeyup="clickEvent(this,'3')" onkeydown="deleteEvent(this,'1')">
-        </div>
-        <div>
-            <input placeholder="0" type="number" id="3" class="code" maxlength="1" onkeyup="clickEvent(this,'4')" onkeydown="deleteEvent(this,'2')">
-        </div>
-        <div>
-            <input placeholder="0" type="number" id="4" class="code" maxlength="1" onkeyup="clickEvent(this,'5')" onkeydown="deleteEvent(this,'3')">
-        </div>
-        <div>
-            <input placeholder="0" type="number" id="5" class="code" maxlength="1" onkeyup="clickEvent(this,'6')" onkeydown="deleteEvent(this,'4')">
-        </div>
-        <div>
-            <input placeholder="0" type="number" id="6" class="code" maxlength="1" onkeydown="deleteEvent(this,'5')">
-        </div>
-    </div>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <p id="verification_subtext">
+		We have emailed you the six digit code to 
+		acciojob@email.com Enter the code below to 
+		confirm your email address
+	</p>
+	<div class="code-container">
+		<input type="text" class="code" maxlength="1" id="code-1" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+		<input type="text" class="code" maxlength="1" id="code-2" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+		<input type="text" class="code" maxlength="1" id="code-3" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+		<input type="text" class="code" maxlength="1" id="code-4" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+		<input type="text" class="code" maxlength="1" id="code-5" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+		<input type="text" class="code" maxlength="1" id="code-6" oninput="focusNext(this)" onkeydown="focusPrev(this)">
+	</div>
+	
+	<script type="text/javascript" src="./script.js"></script>
 
 </body>
 

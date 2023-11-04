@@ -1,9 +1,16 @@
-//your JS code here. If required.
-function clickEvent(first,last){
-    if(first.value.length){
-      document.getElementById(last).focus();
+function focusNext(currentInput) {
+    const maxLength = parseInt(currentInput.getAttribute('maxlength'));
+    const nextInputId = parseInt(currentInput.id.substring(5)) + 1;
+
+    if (currentInput.value.length === maxLength && nextInputId <= 6) {
+        document.getElementById('digit' + nextInputId).focus();
     }
-	if(last.value.length==0){
-		document.getElementById(first).focus();
-	}
+}
+
+function focusPrev(currentInput) {
+    const prevInputId = parseInt(currentInput.id.substring(5)) - 1;
+
+    if (event.key === 'Backspace' && prevInputId >= 1) {
+        document.getElementById('digit' + prevInputId).focus();
+    }
 }
