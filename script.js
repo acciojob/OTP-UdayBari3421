@@ -1,3 +1,8 @@
+let inp = document.querySelector("#code-1");
+
+window.addEventListener("load", ()=>{
+	inp.focused();
+});
 function focusNext(currentInput) {
     const maxLength = parseInt(currentInput.getAttribute('maxlength'));
     const nextInputId = parseInt(currentInput.id.split('-')[1]) + 1;
