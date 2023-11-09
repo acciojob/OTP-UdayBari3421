@@ -1,7 +1,5 @@
 let inp = document.querySelector("#code-1");
-function add() {	
-	inp.setAttribute("autofocus");
-}
+window.onload(inp.focus());
 
 function focusNext(currentInput) {
     const maxLength = parseInt(currentInput.getAttribute('maxlength'));
