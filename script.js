@@ -1,43 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const inputElements = document.querySelectorAll(".code");
+let inp = document.querySelector("#code-1");
+window.onload(inp.focus());
 
-  inputElements.forEach((inputElement, index) => {
-    inputElement.addEventListener("input", function (event) {
-      const code = event.data;
+function focusNext(currentInput) {
+    const maxLength = parseInt(currentInput.getAttribute('maxlength'));
+    const nextInputId = parseInt(currentInput.id.split('-')[1]) + 1;
 
-      if (!code) {
-        handleBackspace(inputElement);
-        return;
-      }
-
-      if (/^[0-9]$/.test(code)) {
-        focusNextInput(index);
-      } else {
-        inputElement.value = "";
-      }
-    });
-
-    inputElement.addEventListener("keydown", function (event) {
-      if (event.key === "Backspace") {
-        event.preventDefault();
-        handleBackspace(inputElement);
-      }
-    });
-  });
-});
-
-function focusNextInput(index) {
-  const inputElements = document.querySelectorAll(".code");
-  const nextIndex = index + 1;
-  if (nextIndex < inputElements.length) {
-    inputElements[nextIndex].focus();
-  }
+    if (currentInput.value.length === maxLength && nextInputId <= 6) {
+        document.getElementById('code-' + nextInputId).focus();
+    }
 }
 
-function handleBackspace(currentElement) {
-  const prevElement = currentElement.previousElementSibling;
-  if (prevElement) {
-    prevElement.focus();
-    prevElement.value = "";
-  }
+function focusPrev(currentInput) {
+    const prevInputId = parseInt(currentInput.id.split('-')[1]) - 1;
+
+    if (event.key === 'Backspace' && prevInputId >= 1) {
+        currentInput.value = '';
+        document.getElementById('code-' + prevInputId).focus();
+    }
 }
